@@ -1,6 +1,6 @@
 # 🧠 Enterprise RAG Knowledge Platform
 
-[![CI](https://github.com/your-org/rag-knowledge-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/rag-knowledge-platform/actions/workflows/ci.yml)
+
 
 A multi-tenant-style enterprise knowledge assistant where users in different roles (HR, Engineering, Admin) upload documents, ask questions in natural language, and get answers grounded **only** in documents their role is allowed to see — every answer carries source citations. The platform continuously measures answer quality (faithfulness, relevance, context precision/recall) and surfaces it in a dashboard. It exposes retrieval as MCP tools and ships with full observability.
 
