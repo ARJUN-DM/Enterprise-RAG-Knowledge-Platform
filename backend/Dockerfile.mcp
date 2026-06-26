@@ -1,0 +1,21 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application code (mcp/ directory, and shared config/providers/db)
+COPY . .
+
+# Expose port (for future TCP transport support)
+EXPOSE 8100
+
+# Run the MCP server via stdio transport
+ENTRYPOINT ["python", "-m", "rag_mcp"]
